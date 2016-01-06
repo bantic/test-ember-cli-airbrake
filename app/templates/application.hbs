@@ -1,3 +1,14 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 id="title">ember-cli-airbrake</h2>
+
+<button {{action 'makeError' 'thrown'}}>thrown error</button>
+<button {{action 'makeError' 'explicit'}}>
+  explicit error
+</button>
+<button {{action 'makeError' 'setTimeout'}}>
+  setTimeout error
+</button>
+<button {{action 'makeError' 'promise'}}>
+  promise error
+</button>
 
 {{outlet}}
