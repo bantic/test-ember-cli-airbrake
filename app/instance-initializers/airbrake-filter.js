@@ -4,7 +4,9 @@ export function initialize(instance) {
     notice.session.username = 'bob' + Math.random();
     return notice;
   };
-  let airbrake = instance.container.lookup('service:airbrake');
+  let lookup = instance.lookup ? (...args) => instance.lookup(...args) :
+                                 (...args) => instance.container.lookup(...args);
+  let airbrake = lookup('service:airbrake');
   airbrake.addFilter(filter);
 }
 
