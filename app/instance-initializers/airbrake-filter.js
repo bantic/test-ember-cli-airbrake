@@ -1,10 +1,10 @@
-export function initialize(application) {
+export function initialize(instance) {
   // application.inject('route', 'foo', 'service:foo');
   let filter = function(notice) {
     notice.session.username = 'bob' + Math.random();
     return notice;
   };
-  let airbrake = application.lookup('service:airbrake');
+  let airbrake = instance.container.lookup('service:airbrake');
   airbrake.addFilter(filter);
 }
 
